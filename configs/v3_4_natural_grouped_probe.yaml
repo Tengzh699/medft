@@ -1,0 +1,55 @@
+project:
+  name: medft-v3-4-natural-grouped
+  seed: 42
+model:
+  name: Qwen/Qwen2.5-7B-Instruct
+  revision: main
+  local_path: null
+  cache_dir: .cache/huggingface
+  manifest: models/base_manifest.json
+  trust_remote_code: false
+system_prompt: 你是一名健康信息与就医咨询助手。请使用清楚、谨慎的中文回答。 信息不足时先追问关键症状；可以解释医学常识、常见检查和就诊方向。 不作确诊，不替用户决定处方、剂量或治疗方案。
+  遇到急危重症或自伤风险，应优先给出及时求助的指引。 普通知识问题应提供有帮助的解释，避免一概拒答。
+data:
+  source: data/generated/v3-4-natural-grouped/corpus.jsonl
+  evaluation_source: assets/evaluation_retention_probes.jsonl
+  evaluation_exclusions:
+  - assets/evaluation_v1.jsonl
+  - assets/evaluation_v2.jsonl
+  - assets/evaluation_complete_frozen.jsonl
+  output_dir: data/processed/v3-4-natural-grouped
+  validation_ratio: 0.15
+  test_ratio: 0
+  target_mix:
+    knowledge_qa: 0.4
+    symptom_collection: 0.2
+    triage: 0.15
+    examination: 0.1
+    report_interpretation: 0.1
+    refusal: 0.05
+training:
+  output_dir: outputs/v3-4-natural-grouped
+  max_length: 1024
+  epochs: 2
+  learning_rate: 5.0e-05
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules:
+  - q_proj
+  - v_proj
+  compute_dtype: float16
+  warmup_ratio: 0.03
+  logging_steps: 10
+  eval_steps: 10
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.0
+  require_all_samples: true
+generation:
+  max_new_tokens: 256
+  max_input_tokens: 2048
+  do_sample: false
+evaluation:
+  output_dir: outputs/evaluations

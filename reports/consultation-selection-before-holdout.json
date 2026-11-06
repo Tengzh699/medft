@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-11-06T09:02:12.858915+00:00",
+  "purpose": "Final assessment only, not promotion",
+  "selected_adapter": "<PROJECT_ROOT>\\outputs\\v5-1-consultation-hard-scale-050\\adapter",
+  "strength": 0.5,
+  "adapter_weight_sha256": "bd471f4d5a908d75cddfa46b788e20de43e395551f5a9b456cdb13c4d565548b",
+  "adapter_config_sha256": "8e6f878e435da589f24f18b1ac4d5356492333282bcded2477153e9a70db4b9d",
+  "training_config_sha256": "daae35f429dd2b56ddff2a2f50cf7f92d5769769940ee14ba0cd7813e1be5496",
+  "development_review_sha256": "c0380f3d929681a85162f34e1fba6b9b6097ff5e80c1e7e10ee86ef4a051bbe6",
+  "holdout_sha256": "bd21996b48ca5e4b60997323a3240d4fe06a36719e0f4554c0a295e152b3820e",
+  "holdout_count": 32,
+  "holdout_condition_groups": 8,
+  "holdout_inference_not_started": true,
+  "selection_reason": "Full strength failed; only predeclared half strength met narrow relative gate. Remaining moderate errors disclosed. Do not select again using new32.",
+  "inference": {
+    "batch_size": 8,
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "padding_side": "left",
+    "guard_rewrite": false
+  },
+  "review": "Random A/B identities; record both grades and reasons before opening identity key. Engineering review, not clinician validation."
+}

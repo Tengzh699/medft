@@ -1,0 +1,125 @@
+{
+  "completed_at": "2026-11-06T09:20:31.293462+00:00",
+  "status": "experiment_complete_no_overall_consultation_superiority_demonstrated",
+  "scope": "Medical consultation natural-language answers; separate from prior CMExam multiple-choice results.",
+  "base": "Qwen/Qwen2.5-7B-Instruct",
+  "base_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "data": {
+    "authorship": "source-informed authored synthetic teaching preferences; not real patient dialogue or physician annotation",
+    "train_pairs": 220,
+    "fixed_validation_pairs": 18,
+    "source_pages": 48,
+    "initial_condition_families": 28,
+    "initial_states_per_family": 6,
+    "added_minimal_edit_pairs": 36,
+    "train_group_ids": 53,
+    "train_group_limit": "Technical condition/error IDs, not independent patient counts",
+    "final_holdout_condition_groups": 8,
+    "final_holdout_dialogues": 32,
+    "exact_split_prompt_intersections": 0
+  },
+  "training": {
+    "objective": "reference_cached_dpo_plus_chosen_sft",
+    "starts_from": "original_base_with_new_lora",
+    "steps": 54,
+    "actual_epoch": 1.9454545454545453,
+    "runtime_seconds": 647.7018,
+    "learning_rate": 2e-05,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "validation_best_loss": 0.6656931638717651,
+    "selected_checkpoint": "<PROJECT_ROOT>\\outputs\\v5-1-consultation-hard\\checkpoints\\checkpoint-54",
+    "full_adapter": "outputs/v5-1-consultation-hard/adapter",
+    "assessed_adapter": "outputs/v5-1-consultation-hard-scale-050/adapter",
+    "assessed_alpha": 8,
+    "assessed_strength": 0.5,
+    "weights_sha256": "bd471f4d5a908d75cddfa46b788e20de43e395551f5a9b456cdb13c4d565548b",
+    "strength_is_new_training": false
+  },
+  "development": {
+    "cases": 36,
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "base_rule_passed": 30,
+    "full_strength_rule_passed": 32,
+    "half_strength_rule_passed": 31,
+    "full_content_gate_passed": false,
+    "half_relative_gate_passed": true,
+    "half_gain": [
+      "v2-eval-04"
+    ],
+    "half_loss": [],
+    "interpretation": "One lexical/activity-feeling heuristic gain; these repeatedly used development cases do not establish medical improvement. Prior single-item metrics not mixed."
+  },
+  "final_holdout": {
+    "cases": 32,
+    "condition_groups": 8,
+    "batch_size": 8,
+    "max_new_tokens": 384,
+    "guard_rewrite": false,
+    "selection_frozen_before_inference": true,
+    "all_64_raw_answers_reviewed": true,
+    "grades_frozen_before_unblinding": true,
+    "preferences": {
+      "tie": 24,
+      "adapter": 4,
+      "base": 4
+    },
+    "grade_distribution": {
+      "base": {
+        "0": 5,
+        "1": 9,
+        "2": 4,
+        "3": 14
+      },
+      "adapter": {
+        "0": 4,
+        "1": 10,
+        "2": 6,
+        "3": 12
+      }
+    },
+    "both_models_grade_at_least_2_count": 18,
+    "identical_raw_count": 8,
+    "new_adapter_grade0": [],
+    "consumed": true,
+    "do_not_reuse_for_model_selection": true
+  },
+  "decision": {
+    "default_model_replaced": false,
+    "recommend_as_better_consultation_model": false,
+    "reason": "Four content preferences for candidate, four for base, many remaining unsafe/ambiguous additions; no consistent overall content benefit. Stronger weights failed development content gate."
+  },
+  "verification": {
+    "tests_passed": 121,
+    "test_runtime_seconds": 41.415,
+    "audit": "outputs/consultation-v5-1/audit.json",
+    "historical_integrity": "outputs/consultation-v5-1/historical-integrity.json",
+    "historical_protected_files": 104
+  },
+  "limitations": [
+    "Source author and engineering reviewer overlap; not independent clinician review.",
+    "Related condition branches correlated; no patient-level accuracy or significance claim.",
+    "Source-URL/prompt separation does not exclude broader syndrome overlap or base pretraining exposure.",
+    "V5.1 modifies data and reference autocast precision together; no data-only causal claim.",
+    "Several improvements are relative reductions in error, not medically adequate answers.",
+    "This experiment did not collect actual patient dialogues or physician labels."
+  ],
+  "artifacts": {
+    "report": "docs/CONSULTATION_V5_1.md",
+    "paired_raw_answers": "outputs\\consultation-v5-1\\holdout-paired-review.md",
+    "training_data": "data/generated/v5-1-consultation-hard/train.jsonl",
+    "content_result": "outputs\\consultation-v5-1\\holdout-content-result.json",
+    "selection_freeze": "outputs\\consultation-v5-1\\selected-before-holdout.json",
+    "blinded_grades": "outputs\\consultation-v5-1\\holdout-blind\\grades.jsonl"
+  },
+  "hashes": {
+    "configs\\v5_1_consultation_hard.yaml": "daae35f429dd2b56ddff2a2f50cf7f92d5769769940ee14ba0cd7813e1be5496",
+    "data\\generated\\v5-1-consultation-hard\\train.jsonl": "df3124d6baef2a144b5dc77a2f986a10c9803141f9151297c6c0f6670ba82ca8",
+    "data\\generated\\v5-1-consultation-hard\\validation.jsonl": "d2fe4ee12ee32ba59802482521608b7ec1fe2769c01aeea925aca82b9f563635",
+    "assets\\consultation_v5_holdout_frozen.jsonl": "bd21996b48ca5e4b60997323a3240d4fe06a36719e0f4554c0a295e152b3820e",
+    "outputs\\consultation-v5-1\\selected-before-holdout.json": "2e7f9e069fe3df50431bb0fea7f55f9198c0c4d590973a57b11289b458c67972",
+    "outputs\\consultation-v5-1\\holdout-blind\\grades.jsonl": "436197bab1c1ccd6e1a0c6603df2ebfb1e424489b7ae3f7536060c407b596a3c",
+    "outputs\\consultation-v5-1\\holdout-content-result.json": "e8a9209af3fb1190a2100f535a4a8008c0142b35ad33141d10b57239fbb573d9"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "verified_at": "2026-11-06T07:19:41.867244+00:00",
+  "historical_files_preserved": 104,
+  "source_labels_reconstructed": 2100,
+  "split_counts": {
+    "train": 2209,
+    "validation": 148
+  },
+  "exact_text_overlap": {
+    "user": 0,
+    "assistant": 0
+  },
+  "high_near_stem_matches": 0,
+  "selection": {
+    "global_step": 500,
+    "max_steps": 500,
+    "best_metric": 0.5215194225311279,
+    "best_model_checkpoint": "<PROJECT_ROOT>\\outputs\\v4-2-choices\\checkpoints\\checkpoint-375",
+    "stopped_early": false
+  },
+  "adapter_sha256": "6e3ad7803d1a1218fc896c7daa374cfa9938782d4f619d1f9fabd24cf5fba21c",
+  "evaluations": {
+    "outputs/evaluations/cmexam-strict-dev-base": {
+      "correct": 82,
+      "count": 100,
+      "predictions_sha256": "e0399f6eb2c823f08cf374d027473aa95e7b2e1eeced6a2d158fdc3fe0bfd03d",
+      "paired_comparison": null
+    },
+    "outputs/evaluations/cmexam-choices-dev": {
+      "correct": 87,
+      "count": 100,
+      "predictions_sha256": "e617f6b32f2e6915b412e6382ba7d36a2348c89391568f58e3b902d5bc6703e3",
+      "paired_comparison": {
+        "base_correct": 82,
+        "adapter_correct": 87,
+        "delta_percentage_points": 5.0,
+        "gained": 6,
+        "lost": 1,
+        "mcnemar_exact_two_sided_p": 0.125,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      }
+    },
+    "outputs/evaluations/cmexam-choices-scale-050-dev": {
+      "correct": 84,
+      "count": 100,
+      "predictions_sha256": "53ae6a6fb8c6c6a1b837c8cf3fb76c589d613d0283fb705e5e25d550dbe9faaa",
+      "paired_comparison": {
+        "base_correct": 82,
+        "adapter_correct": 84,
+        "delta_percentage_points": 2.0,
+        "gained": 2,
+        "lost": 0,
+        "mcnemar_exact_two_sided_p": 0.5,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      }
+    },
+    "outputs/evaluations/cmexam-choices-scale-025-dev": {
+      "correct": 84,
+      "count": 100,
+      "predictions_sha256": "eb213a7a5eae9ee4894d62295c587e11fab8f7e6ce8d223fc694151384aa7f90",
+      "paired_comparison": {
+        "base_correct": 82,
+        "adapter_correct": 84,
+        "delta_percentage_points": 2.0,
+        "gained": 2,
+        "lost": 0,
+        "mcnemar_exact_two_sided_p": 0.5,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      }
+    },
+    "outputs/evaluations/cmexam-final-test-base": {
+      "correct": 744,
+      "count": 1000,
+      "predictions_sha256": "c6811114d5af8715ccfa8a69fb4c9b4d76262e826328924647f9c66cbbb40e34",
+      "paired_comparison": null
+    },
+    "outputs/evaluations/cmexam-final-test-choices": {
+      "correct": 810,
+      "count": 1000,
+      "predictions_sha256": "cdb44a39e9244a29a24249f629b972221d00e487c3e024efc086bc69df1e838b",
+      "paired_comparison": {
+        "base_correct": 744,
+        "adapter_correct": 810,
+        "delta_percentage_points": 6.6,
+        "gained": 86,
+        "lost": 20,
+        "mcnemar_exact_two_sided_p": 6.193382060803115e-11,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      }
+    },
+    "outputs/evaluations/cmexam-final-permuted-base": {
+      "correct": 645,
+      "count": 859,
+      "predictions_sha256": "15527e9bdbbdd837042611535ef1926d9a1afe0d43f24adbb1539707e80d1a38",
+      "paired_comparison": null
+    },
+    "outputs/evaluations/cmexam-final-permuted-choices": {
+      "correct": 690,
+      "count": 859,
+      "predictions_sha256": "1d7c97bad0562fc48db834c1165151ad765e5976c7e8ce76a2bee2c6137eceed",
+      "paired_comparison": {
+        "base_correct": 645,
+        "adapter_correct": 690,
+        "delta_percentage_points": 5.238649592549476,
+        "gained": 67,
+        "lost": 22,
+        "mcnemar_exact_two_sided_p": 1.899849174722082e-06,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      }
+    }
+  },
+  "inference_strengths": {
+    "outputs/evaluations/cmexam-strict-dev-base": 0.0,
+    "outputs/evaluations/cmexam-choices-dev": 1.0,
+    "outputs/evaluations/cmexam-choices-scale-050-dev": 0.5,
+    "outputs/evaluations/cmexam-choices-scale-025-dev": 0.25,
+    "outputs/evaluations/cmexam-final-test-base": 0.0,
+    "outputs/evaluations/cmexam-final-test-choices": 1.0,
+    "outputs/evaluations/cmexam-final-permuted-base": 0.0,
+    "outputs/evaluations/cmexam-final-permuted-choices": 1.0
+  },
+  "limits": "Automatic source/score audit, not physician review. Public pretraining contamination and lower semantic similarity remain possible."
+}

@@ -1,0 +1,55 @@
+{
+  "exported_at": "2026-11-06T11:51:33.094330+00:00",
+  "kind": "sanitized_summary_export",
+  "note": "Public summary copies only. Original local output hashes are retained for provenance; exported bytes differ when local absolute paths are replaced. Weights, full raw data, caches and local execution outputs are excluded.",
+  "files": [
+    {
+      "public_file": "reports/knowledge-final-result.json",
+      "local_source": "outputs/optimization/final-result.json",
+      "source_sha256": "aacf3eb121b2fdc80da4fefee6c651b25d0dd9b6fb73b6c278434593120f2cb8",
+      "export_sha256": "e5cb8bee9ae2da880131e48307cf048a4b2098e34a166c067a4982ee52f6ba3d"
+    },
+    {
+      "public_file": "reports/consultation-final-result.json",
+      "local_source": "outputs/consultation-v5-1/final-result.json",
+      "source_sha256": "8a9600dfb70c8c6f9efac4a54378a28e4e75293beba6b68cb8b499c2e52c6637",
+      "export_sha256": "7ad638cdc4dbf6f98be45d30974e135e8e0b81ee67a7c24b45f371245f348d0d"
+    },
+    {
+      "public_file": "reports/consultation-data-audit.json",
+      "local_source": "outputs/consultation-v5-1/audit.json",
+      "source_sha256": "89f9651fa6428778457237118288db798d20ad861c6737da4aa8c6ed66150da8",
+      "export_sha256": "a2efe373934504cacb00ce05d2c6a6c6e598569fcc0bbae7b56996b0d75bcfd0"
+    },
+    {
+      "public_file": "reports/consultation-content-review.json",
+      "local_source": "outputs/consultation-v5-1/holdout-content-result.json",
+      "source_sha256": "e8a9209af3fb1190a2100f535a4a8008c0142b35ad33141d10b57239fbb573d9",
+      "export_sha256": "e8a9209af3fb1190a2100f535a4a8008c0142b35ad33141d10b57239fbb573d9"
+    },
+    {
+      "public_file": "reports/consultation-final-verification.json",
+      "local_source": "outputs/consultation-v5-1/final-verification.json",
+      "source_sha256": "ad479b89b0bea718efc35512e7a21d0949a8cc47f8a79ffdbae57318b77d672a",
+      "export_sha256": "ad479b89b0bea718efc35512e7a21d0949a8cc47f8a79ffdbae57318b77d672a"
+    },
+    {
+      "public_file": "reports/consultation-selection-before-holdout.json",
+      "local_source": "outputs/consultation-v5-1/selected-before-holdout.json",
+      "source_sha256": "2e7f9e069fe3df50431bb0fea7f55f9198c0c4d590973a57b11289b458c67972",
+      "export_sha256": "f3921bb4ce1ac9ea06b071b342f95de95a074ca86cbbb51661644aad39c00f63"
+    },
+    {
+      "public_file": "reports/cmexam-final-integrity.json",
+      "local_source": "outputs/optimization/cmexam-complete-final-integrity.json",
+      "source_sha256": "345602e2189978a3d1eb9b0b61deee6046441ffaa682eb236f707b46bd290139",
+      "export_sha256": "aed3a1516ed17dee025f2a6ab8e1b7859bdfb62b6bb329ca31f22085ec1f61f5"
+    },
+    {
+      "public_file": "reports/tutorial-repetition-audit.json",
+      "local_source": "outputs/tutorial-audit/tutorial2-repetition-audit.json",
+      "source_sha256": "c8278225cffadd405d014f5d72a16d8c75a6e2406e1b0e974eec5e6194e105b5",
+      "export_sha256": "e31ca434b9c346bd9047420e603d730b88ec233b5eeb74bb7ab4fb358ba269df"
+    }
+  ]
+}

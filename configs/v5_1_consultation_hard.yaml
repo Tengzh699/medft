@@ -1,0 +1,61 @@
+project:
+  name: medft-v5-1-consultation-hard
+  seed: 42
+model:
+  name: Qwen/Qwen2.5-7B-Instruct
+  revision: main
+  local_path: null
+  cache_dir: .cache/huggingface
+  manifest: models/base_manifest.json
+  trust_remote_code: false
+system_prompt: 你是一名健康信息与就医咨询助手。请使用清楚、谨慎的中文回答。 信息不足时先追问关键症状；可以解释医学常识、常见检查和就诊方向。 不作确诊，不替用户决定处方、剂量或治疗方案。
+  遇到急危重症或自伤风险，应优先给出及时求助的指引。 普通知识问题应提供有帮助的解释，避免一概拒答。
+data:
+  source: data/generated/v5-1-consultation-hard/corpus.jsonl
+  evaluation_source: assets/evaluation_v2.jsonl
+  evaluation_exclusions:
+  - assets/evaluation_v1.jsonl
+  - assets/evaluation_complete_frozen.jsonl
+  - assets/cmexam_dev_frozen.jsonl
+  - assets/cmexam_test_frozen.jsonl
+  output_dir: data/generated/v5-1-consultation-hard
+  validation_ratio: 0.15
+  test_ratio: 0
+  target_mix:
+    knowledge_qa: 0.04000000000000001
+    symptom_collection: 0.020000000000000004
+    triage: 0.015
+    examination: 0.010000000000000002
+    report_interpretation: 0.010000000000000002
+    refusal: 0.005000000000000001
+    medical_exam: 0.9
+  fixed_validation_source: data/generated/v4-1-cmexam/fixed_validation.jsonl
+training:
+  output_dir: outputs/v5-1-consultation-hard
+  max_length: 1024
+  epochs: 2
+  learning_rate: 2.0e-05
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.0
+  target_modules:
+  - q_proj
+  - v_proj
+  compute_dtype: float16
+  warmup_ratio: 0.03
+  logging_steps: 10
+  eval_steps: 12
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.0
+  require_all_samples: true
+  objective: reference_cached_dpo_plus_chosen_sft
+  beta: 0.1
+  chosen_sft_weight: 0.1
+generation:
+  max_new_tokens: 384
+  max_input_tokens: 2048
+  do_sample: false
+evaluation:
+  output_dir: outputs/evaluations

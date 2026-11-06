@@ -1,0 +1,219 @@
+{
+  "repo_id": "FreedomIntelligence/huatuo_encyclopedia_qa",
+  "source_revision": "2989899dd5bed83cf9bd17cf9fff9889705436e2",
+  "review_kind": "engineering_quality_triage",
+  "version": "2026-10-29.1",
+  "scope": "Recorded exclusions from the 200 sampled common-health-v2 candidates; remaining rows are unreviewed.",
+  "interpretation": "Engineering triage by the coding assistant; no clinician approval, no medical gold labels and no rewritten answers.",
+  "answer_hash_method": "SHA-256 of stripped UTF-8 upstream answer before chat formatting.",
+  "entries": [
+    {
+      "source_line": 345203,
+      "answer_sha256": "3034e24558530e03498c2450d4d4f8dcef0333e04e51c861c82b074fa948cd12",
+      "question": "幽门螺杆菌检查结果5严重吗",
+      "reason_code": "prescriptive_or_overconfident_advice",
+      "reason": "缺检测方法、单位及参考范围，直接断定数值5不严重。",
+      "evidence": "幽门螺杆菌检查结果5不严重"
+    },
+    {
+      "source_line": 16884,
+      "answer_sha256": "61981313500d4d567bb05a1a6f23a37748789df69b07bd1a8db14b308ef47025",
+      "question": "什么是肾功能检查",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "混同肾功能评估与排尿功能检查，并泛化检查准备。",
+      "evidence": "肾功能检查是一项用于检查排尿功能是否正常的辅助检查方法"
+    },
+    {
+      "source_line": 28711,
+      "answer_sha256": "b7576ba3a336bed6e07bbe8e8708f4fed88524ae82a34080e4ca9b63f093d1f1",
+      "question": "便秘会引起哪些症状",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "把便秘直接关联溃疡性结肠炎和癌症，风险数字无来源及适用范围。",
+      "evidence": "经常性的便秘常会引起溃疡性结肠炎"
+    },
+    {
+      "source_line": 35645,
+      "answer_sha256": "7b6ef70d8c2b892f48c3320af2abeb0955ed1f47808692a6a0e9633f69d3ff2a",
+      "question": "龋齿是什么?",
+      "reason_code": "broken_or_inconsistent_text",
+      "reason": "首句缺主体，多处句子及并列项缺失。",
+      "evidence": "并发症包含、与形成牙齿脓肿"
+    },
+    {
+      "source_line": 328563,
+      "answer_sha256": "04b9264c1278bddd7c1430dc7e442a50248b2075165200413cb3c0bab4d51c21",
+      "question": "肝功能检查结果要多长时间才能拿到",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "固定出报告时长并过度推断转氨酶结果，缺机构与临床背景。",
+      "evidence": "最后拿到肝功能检查的结果时间大概需要三个小时左右的时间"
+    },
+    {
+      "source_line": 82411,
+      "answer_sha256": "90119324f6e463b13d7c310a6c55ee8dd03a3e0c9f90533933db8289ffe78b4e",
+      "question": "糖尿病的三多一少症状具体指什么",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "将OGTT称为唯一诊断标准，并附带未经限定的饮水降糖和饮食建议。",
+      "evidence": "是诊断糖尿病的唯一标准"
+    },
+    {
+      "source_line": 354607,
+      "answer_sha256": "d5dd30a58c09440660ffd086fab6269923f14b004fe5e74bb8fe41bff161e20f",
+      "question": "为什么促甲状腺激素是0.01",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "将TSH称为生长激素，把异常主要归为生活习惯，未结合完整报告解释。",
+      "evidence": "促甲状腺激素是一种关乎人体健康的重要生长激素"
+    },
+    {
+      "source_line": 85067,
+      "answer_sha256": "62d5cd230617d7837c8070b147837662efead47f2b057d38e89b786be944fcf9",
+      "question": "甲状腺功能检查的费用是多少",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "混入日常家电辐射导致甲状腺损害等无依据的泛化建议。",
+      "evidence": "远离一些辐射比较大的家用电器，比如微波炉、电磁炉、电脑等等"
+    },
+    {
+      "source_line": 115682,
+      "answer_sha256": "4739899c1c4e12d4136a9fbb75a8dfbce18672b849262d078325ead3a3804f5c",
+      "question": "甲状腺功能检查需要空腹吗",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "把甲状腺抗体检查一概要求空腹，混淆抗体与激素并泛化检查准备。",
+      "evidence": "进食会对抗体的激素水平会造成影响"
+    },
+    {
+      "source_line": 130964,
+      "answer_sha256": "8eaea93ef0f2c43438b8771da7ec2348f510aacb4e254b063eacaa64379e12b6",
+      "question": "血小板的结构是什么?",
+      "reason_code": "unit_corruption",
+      "reason": "微观结构的尺寸及体积单位损坏，不凭猜测补单位，整条剔除。",
+      "evidence": "直径约2～4m，厚0.2～1.5m，平均体积7m3"
+    },
+    {
+      "source_line": 133524,
+      "answer_sha256": "8ce82e96233a688c757cc2436613688d1ff94af442317a635f314f4a9db6510b",
+      "question": "便秘会得胃癌吗症状哪些",
+      "reason_code": "outside_batch_scope",
+      "reason": "涉及癌症病因和症状的长篇推断，超出本批公开常见健康知识的保守范围。",
+      "evidence": "胃癌的病因"
+    },
+    {
+      "source_line": 162615,
+      "answer_sha256": "48a1ce4f1ee824dcee951585929b60256e6e87a67b9b88a89756ac5b3a561187",
+      "question": "便秘原因出血怎么回事",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "把便秘、毒素反复吸收与直肠癌直接因果关联，且混入第一人称问句。",
+      "evidence": "最严重的就会形成直肠癌"
+    },
+    {
+      "source_line": 164971,
+      "answer_sha256": "09df2453474606413ba986f507be9e2e4ef6b05b0f546e335b9a9eb9b094f80a",
+      "question": "促甲状腺激素是什么原因引起的",
+      "reason_code": "prescriptive_or_overconfident_advice",
+      "reason": "未提供TSH异常方向或数值即转入亚临床甲亢推断，并混列无单位参考值。",
+      "evidence": "促甲状腺激素如果T3T4正常，要考虑是否有亚临床甲亢的出现"
+    },
+    {
+      "source_line": 178878,
+      "answer_sha256": "bf64d6c9ce1657faacc98f4e2ed9c7f47d605ca639b0a4d60a47f89fa392cc1c",
+      "question": "湿疹和荨麻疹的症状",
+      "reason_code": "broken_or_inconsistent_text",
+      "reason": "内容重复，单个风团持续时间口径不清，需重写并复核后再考虑导入。",
+      "evidence": "风团持续数分钟至数小时，少数可延长至数天后消退"
+    },
+    {
+      "source_line": 202681,
+      "answer_sha256": "fe52bec6ad36dc11982a14e2a584ed788d646447df484d540bc342d69d0256c0",
+      "question": "尿常规检查价钱",
+      "reason_code": "question_answer_mismatch",
+      "reason": "询问价格却回答项目，无价格说明；还含未经限定的结果推断。",
+      "evidence": "尿常规检查内容包括很多项"
+    },
+    {
+      "source_line": 207904,
+      "answer_sha256": "65cff2bc33033994e34ae636599f36ca876876d6278cddfad4d5330766c1c86f",
+      "question": "男人骨质疏松的原因",
+      "reason_code": "broken_or_inconsistent_text",
+      "reason": "拼接文本缺主语，含群体刻板描述和无来源统计。",
+      "evidence": "约有73%的都市女性"
+    },
+    {
+      "source_line": 211536,
+      "answer_sha256": "39c59b0a57ee9dd59da1a38dad6018758f296f2ba8bcf471fd3d653b8718d62a",
+      "question": "急性腹泻症状",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "混写急性与持续或间歇腹泻表现，含未经限定的生冷食物伤害断言。",
+      "evidence": "会严重伤害到我们的肠胃，引发腹泻"
+    },
+    {
+      "source_line": 224769,
+      "answer_sha256": "8ea3236354fd8348235556a92721439369cc80c31113017eca47d90fe3ff5bef",
+      "question": "急性鼻炎的信号是什么？",
+      "reason_code": "prescriptive_or_overconfident_advice",
+      "reason": "以症状知识题推荐APC、抗生素组合和发汗偏方，超出本批范围。",
+      "evidence": "服用APC，加上抗生素"
+    },
+    {
+      "source_line": 248127,
+      "answer_sha256": "81476102c4a6de04701b2b2fe0913f89e5144bacbc804b681d97484ae754971f",
+      "question": "血常规检查用空腹吗",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "混同血常规与组合体检准备，泛化为禁食12小时和检查前三天吃素。",
+      "evidence": "一般来说血常规检查需要空腹的"
+    },
+    {
+      "source_line": 258725,
+      "answer_sha256": "e3c75c25afd52b2fc254276a5a2f01cc8c15991b07d27cd798cae47dab03bd2c",
+      "question": "血常规检查中平均血红蛋白浓度高是什么意思",
+      "reason_code": "broken_or_inconsistent_text",
+      "reason": "大量畸形改写，混同MCHC与全血血红蛋白浓度，升降方向混乱。",
+      "evidence": "均匀血红蛋白浓度飞腾"
+    },
+    {
+      "source_line": 274636,
+      "answer_sha256": "f5bb439d98fb062b7e751d2a480a6b498265dfc344b409663545e1475dfca6f1",
+      "question": "肠镜能检查结肠炎吗",
+      "reason_code": "prescriptive_or_overconfident_advice",
+      "reason": "混同结肠炎与溃疡性结肠炎，建议自行消炎药或输液，检查解释绝对化。",
+      "evidence": "如果你是轻微的，只需吃点消炎药就可以了"
+    },
+    {
+      "source_line": 284910,
+      "answer_sha256": "d1c235f4315968d0e771e2a6799eb79577d054d8d666ffefd853229eec068686",
+      "question": "糖尿病会引起什么并发症",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "把早期尿白蛋白增高等同于肾功能不可逆下降，含损坏句子和无出处风险倍数。",
+      "evidence": "说明肾小球功能出现了不可逆转的下降"
+    },
+    {
+      "source_line": 288303,
+      "answer_sha256": "faa29b48885aa7f73dabe133cf2524985eb9cecebf863de9b6eef43f7f597524",
+      "question": "荨麻疹应该注意哪些东西不能吃",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "用高蛋白或燥火等笼统理由给出广泛食物禁忌，未基于个人明确诱因。",
+      "evidence": "这些食物都是燥火的东西"
+    },
+    {
+      "source_line": 291971,
+      "answer_sha256": "1903486ca58ea3643f81e976810d136dcf67f06eb2f890b111674573d06fca3a",
+      "question": "痛风的分类是什么?",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "以年龄和性别直接排除痛风发生可能，表达过度绝对化。",
+      "evidence": "女性一般在50岁前不会发生痛风"
+    },
+    {
+      "source_line": 297566,
+      "answer_sha256": "6b42c52b70a8fe36f48a3c273bca1a5501a27c6720352b8243325debcc33a13e",
+      "question": "痛风是什么?",
+      "reason_code": "broken_or_inconsistent_text",
+      "reason": "句子、并列项和药名缺失，原文还含具体药物建议。",
+      "evidence": "痛风也会导致、肾结石，或者"
+    },
+    {
+      "source_line": 300910,
+      "answer_sha256": "08bd842a845997031102975f4c69967753bcbb064ca3809eae62e6b4fb8943d0",
+      "question": "高血压的人应该注意点什么",
+      "reason_code": "unsupported_medical_claim",
+      "reason": "把收缩压和舒张压阈值写成必须同时满足，缺测量和确认条件。",
+      "evidence": "而舒张状态下大于等于90"
+    }
+  ]
+}

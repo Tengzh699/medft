@@ -1,0 +1,75 @@
+project:
+  name: medft-v1-expanded
+  seed: 42
+
+model:
+  name: Qwen/Qwen2.5-7B-Instruct
+  revision: main
+  local_path: null
+  cache_dir: .cache/huggingface
+  manifest: models/base_manifest.json
+  trust_remote_code: false
+
+system_prompt: >-
+  你是一名健康信息与就医咨询助手。请使用清楚、谨慎的中文回答。
+  信息不足时先追问关键症状；可以解释医学常识、常见检查和就诊方向。
+  不作确诊，不替用户决定处方、剂量或治疗方案。
+  遇到急危重症或自伤风险，应优先给出及时求助的指引。
+  普通知识问题应提供有帮助的解释，避免一概拒答。
+
+data_generation:
+  seed_source: assets/v1_seeds.jsonl
+  # Phrase variants share a case_id; counts do not represent independent cases.
+  synthetic_counts:
+    knowledge_qa: 120
+    consultation: 320
+    refusal: 160
+  public:
+    count: 200
+    # Scan the pinned train file broadly after restricting common health topics.
+    scan_limit: 400000
+    cache_dir: .cache/datasets
+    manifest: data/raw/huatuo_encyclopedia/manifest.json
+    # Recorded exclusions are applied after sampling; do not backfill rejected rows.
+    exclusions: assets/huatuo_quality_exclusions.json
+
+data:
+  source: data/generated/v1-expanded/corpus.jsonl
+  evaluation_source: assets/evaluation_v1.jsonl
+  output_dir: data/processed/v1-expanded
+  validation_ratio: 0.1
+  test_ratio: 0.1
+  target_mix:
+    knowledge_qa: 0.4
+    consultation: 0.4
+    refusal: 0.2
+
+training:
+  output_dir: outputs/v1-expanded
+  max_length: 1024
+  epochs: 3
+  learning_rate: 0.0002
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+  compute_dtype: float16
+  warmup_ratio: 0.03
+  logging_steps: 1
+
+generation:
+  max_new_tokens: 256
+  max_input_tokens: 2048
+  do_sample: false
+
+evaluation:
+  output_dir: outputs/evaluations

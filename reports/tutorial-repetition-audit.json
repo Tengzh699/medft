@@ -1,0 +1,14 @@
+{
+  "method": "Literal constants parsed with ast.literal_eval; locally reconstructed generation schedule. Drug seed texts replaced with unique placeholders. Not a run of the tutorial training or its unseen evaluation code.",
+  "knowledge_seed_count": 10,
+  "generated_rows": 6000,
+  "unique_knowledge": 30,
+  "unique_consultation": 16,
+  "unique_refusal": 3,
+  "unique_total": 49,
+  "train_count": 5600,
+  "validation_count": 400,
+  "validation_rows_exactly_seen_in_train": 400,
+  "validation_unique": 45,
+  "warning": "The repeated examples and row-level random split make loss validation easy; this does not by itself establish why any independently tested accuracy changed."
+}

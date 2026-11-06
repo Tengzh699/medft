@@ -1,0 +1,105 @@
+{
+  "completed_at": "2026-11-06T07:24:55.427941+00:00",
+  "report": "docs/DATA_OPTIMIZATION_REPORT.md",
+  "knowledge_specific_improvement_observed": true,
+  "consultation_overall_goal_met": false,
+  "default_consultation_model_replaced": false,
+  "selected_knowledge_adapter": "<PROJECT_ROOT>\\outputs\\v4-2-choices\\adapter",
+  "training_count": 2000,
+  "fixed_training_validation_count": 100,
+  "training_decision": "minimum fixed100 validation five-class CE, checkpoint375",
+  "inference_strength": 1.0,
+  "selection_record": "outputs/optimization/cmexam-final-model-selection.json",
+  "primary_and_secondary_results": {
+    "cmexam-final-test-base": {
+      "case_count": 1000,
+      "correct": 744,
+      "accuracy": 0.744,
+      "wilson95": [
+        0.7160527265828488,
+        0.7700798152762004
+      ],
+      "view": "original",
+      "summary_sha256": "00e842ed7dd6ca8582c501f2b589bb16e61fe89eedcb366318be07d02acb70ba",
+      "predictions_sha256": "c6811114d5af8715ccfa8a69fb4c9b4d76262e826328924647f9c66cbbb40e34"
+    },
+    "cmexam-final-test-choices": {
+      "case_count": 1000,
+      "correct": 810,
+      "accuracy": 0.81,
+      "wilson95": [
+        0.7845166798033586,
+        0.8331107299355974
+      ],
+      "view": "original",
+      "paired_comparison": {
+        "base_correct": 744,
+        "adapter_correct": 810,
+        "delta_percentage_points": 6.6,
+        "gained": 86,
+        "lost": 20,
+        "mcnemar_exact_two_sided_p": 6.193382060803115e-11,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      },
+      "summary_sha256": "b2e7d87ecb6ed2eb31c38d2f220fce68bf60a15f832c7c5305e743e21c357fe9",
+      "predictions_sha256": "cdb44a39e9244a29a24249f629b972221d00e487c3e024efc086bc69df1e838b"
+    },
+    "cmexam-final-permuted-base": {
+      "case_count": 859,
+      "correct": 645,
+      "accuracy": 0.7508731082654249,
+      "wilson95": [
+        0.7208759291438431,
+        0.7786364616829464
+      ],
+      "view": "fixed_permuted_eligible_subset",
+      "summary_sha256": "76f5d90d594d239585363d250b22d81dde28e22fbeb0b9bb481bddf34e5ec248",
+      "predictions_sha256": "15527e9bdbbdd837042611535ef1926d9a1afe0d43f24adbb1539707e80d1a38"
+    },
+    "cmexam-final-permuted-choices": {
+      "case_count": 859,
+      "correct": 690,
+      "accuracy": 0.8032596041909197,
+      "wilson95": [
+        0.7753500041187983,
+        0.8284689184351633
+      ],
+      "view": "fixed_permuted_eligible_subset",
+      "paired_comparison": {
+        "base_correct": 645,
+        "adapter_correct": 690,
+        "delta_percentage_points": 5.238649592549476,
+        "gained": 67,
+        "lost": 22,
+        "mcnemar_exact_two_sided_p": 1.899849174722082e-06,
+        "note": "One paired comparison. Dev model selection and public pretraining overlap limit interpretation."
+      },
+      "summary_sha256": "bc6169448f457f6c2ac8f46bd6e1a64660c92f42aec6fcb329ea9315583ef69b",
+      "predictions_sha256": "1d7c97bad0562fc48db834c1165151ad765e5976c7e8ce76a2bee2c6137eceed"
+    }
+  },
+  "same_chosen_adapter_consultation_regression": {
+    "base": 31,
+    "adapter": 30,
+    "count": 36,
+    "metric": "unchanged required keyword groups on development cases, not clinical accuracy"
+  },
+  "content_review_failed_calibrations": {
+    "0.5": {
+      "dev_correct": 84,
+      "original_groups_passed": 33
+    },
+    "0.25": {
+      "dev_correct": 84,
+      "original_groups_passed": 31
+    },
+    "reason": "Lying-flat advice for acute resting dyspnoea, plus delay language for symptomatic critical-value case at0.5."
+  },
+  "unscored_probes": "Fasting glucose timescale error remains; kidney answer drifts from creatinine to clearance. Not independent success evidence.",
+  "residual_data_issue": "Three explicit training-image references and one development missing-table question flagged after selection/test launch; frozen historical datasets and all scores unchanged. Future-ingestion audit added.",
+  "local_tests_passed": 113,
+  "local_tests_log_sha256": "49f3a47566c936e9e381125792607111097f8fa8b1145f1e89c80ae2fac601fb",
+  "historical_files_preserved": 104,
+  "audit": "outputs/optimization/cmexam-complete-final-integrity.json",
+  "limits": "Constrained A-E choice accuracy only; no claim for clinical correctness or physician-reviewed data. Public pretraining contamination and semantic overlap are unknown. No further model selection from final-test results."
+}

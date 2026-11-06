@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-06T09:21:11.820097+00:00",
+  "verified": true,
+  "checks": [
+    "Report artifact links exist",
+    "Reported hashes match saved data and reviews",
+    "Assessed adapter weights/config match pre-holdout selection",
+    "Matched base/candidate inference settings and evaluator code",
+    "Model selection precedes holdout inference completion",
+    "Blinded per-answer counts match final report",
+    "104 historical protected files unchanged"
+  ],
+  "final_result_sha256": "8a9600dfb70c8c6f9efac4a54378a28e4e75293beba6b68cb8b499c2e52c6637",
+  "no_additional_gpu_jobs": true
+}
